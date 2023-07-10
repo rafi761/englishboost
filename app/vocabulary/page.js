@@ -4,7 +4,7 @@ import Navbar from "@/components/loggedpage/Navbar"
 import VocabType from "@/components/vocabulary/VocabType"
 import {useSession} from "next-auth/react"
 
-export const metadata = {
+const metadata = {
     title: 'Vocabulary | EnglishBoost',
     description: 'This is vocabulary page'
 }
