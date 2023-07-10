@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { auth } from "@/db/firebaseConfig"
 import {useAuthState} from 'react-firebase-hooks/auth'
@@ -17,9 +17,11 @@ const Navbar = () => {
     }
     const router = useRouter()
     const [user] = useAuthState(auth)
-    if(user == null){
-      router.push('/login')
-    }
+    useEffect(() => {
+      if(user == null){
+        router.push('/login')
+      }
+    }, [user])
   return (    
     <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
