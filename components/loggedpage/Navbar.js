@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { auth } from "@/db/firebaseConfig"
 import {useAuthState} from 'react-firebase-hooks/auth'
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 const Navbar = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
